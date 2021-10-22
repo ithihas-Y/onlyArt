@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Calibri";
+    src:url("../assets/fonts/calibri/cl.woff2") format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: "CalibriBold";
+    src:url("../assets/fonts/calibri/cb.woff2") format('woff2');
+    font-display: swap;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

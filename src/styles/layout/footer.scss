@@ -1,0 +1,109 @@
+@use "../base" as *;
+
+footer{
+    &.container{
+        padding-bottom: 0px;
+    }
+    display: flex;
+    flex-direction: column;
+    .links-wrapper{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 0px 20px;
+        .link-column{
+            grid-column: span 3 / auto;
+            @media screen and (max-width:992px){
+                grid-column: span 6 / auto;
+            }
+            @media screen and (max-width:768px){
+                grid-column: span 12 / auto;
+            }
+            h5{
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: bold;
+            }
+            li{
+                font-size: 16px;
+                line-height: 24px;
+                a{
+                    display: flex;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        #sub-form{
+            button{
+                width: 100%;
+            }
+            label{
+                font-family: $ff-primary;
+                font-weight: bold;
+                font-size: 1.1rem;
+            }
+        }
+    }
+    .seperator{
+        border-width: 2.5px 1px 0px;
+        border-style: solid;
+        background-color: transparent;
+        border-color: currentcolor;
+        // margin: 0px;
+        margin: 10px 0px;
+        width: 100%;
+        color: rgb(231, 231, 231);
+    }
+    .base{
+        width: 100%;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        align-items: center;
+        margin: auto;
+        // padding-top: 10px;
+        padding-bottom: 20px;
+        display: flex;
+        @media screen and (max-width:562px) {
+            flex-direction: column;
+        }
+        p{
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 18px;
+            // color: rgb(112, 112, 112);
+            a{
+                margin-left: 10px;
+            }
+        }
+        .copyright{
+            svg{
+                width: 40px;
+                height: 40px;
+                margin-left: -5px;
+            }
+        }
+        .social-links{
+            a{
+                display: flex;
+                padding: 5px;
+                margin-right: 10px;
+                transition: all .3s;
+                &:hover{
+                    background-color: $clr-primary;
+                    border-radius: 50%;
+                    svg{
+                        fill:#FFF
+                    }
+                }
+                svg{
+                    position: relative;
+                    width: 18px;
+                    height: 18px;   
+                }
+            }
+        }
+    }
+}

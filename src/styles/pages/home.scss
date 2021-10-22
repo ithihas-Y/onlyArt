@@ -1,0 +1,465 @@
+@use "../base" as *;
+
+/* The animation code */
+// @keyframes moveRight {
+//     // 0%   {transform: rotate(0deg) translateX(0px)}
+//     // 25%  {transform: rotate(0deg) translateX(1400px)}
+//     // 50%  {transform: rotate(90deg) translateX(700px)}
+//     // 75%  {transform: rotate(180deg) translateX(0px)}
+//     // 100% {transform: rotate(180deg) translateX(1400px)}
+//     20%, 100% {
+//         opacity: 1;
+//         transform: translateX(0px);
+//     }
+//     0% {
+//         opacity: 1;
+//     }
+//     20% {
+//         transform: translateX(700px);
+//         opacity: 0;
+//     }
+// }
+// // @keyframes moveRight {
+// //     from {
+// //         transform: rotate(0deg) translateX(0px);
+// //     }
+// //     to {
+// //         transform: rotate(180deg) translateX(1400px) ;
+// //         // transform: ;
+// //     }
+// // }
+// @keyframes moveleft {
+//     from {
+//         transform: translateX(0px);
+//         transform: rotate(0deg);
+//     }
+//     to {
+//         transform: translateX(-1400px);
+//         transform: rotate(180deg);
+//     }
+// }
+.banner{
+    position: relative;
+    min-height: 300px;
+    img{
+        min-height: 300px;
+    }
+    .box-container{
+        position: absolute;
+        padding: 2.5%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        max-width: 650px;
+        filter: blur(20);
+        background-color: #000;
+        opacity: .8;
+        // border: 2px solid #FFF;
+        h2{
+            position: relative;
+            font-family: $ff-primary;
+            font-size: 4rem;
+            color: #FFF;
+            text-align: center;
+            font-weight: normal;
+            letter-spacing: 2px;
+            // max-width: 2ch;
+            padding: 25px;
+            &::before{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                display: block;
+                content: '';
+                width:320px;
+                height: 40px;
+                border-top: 2px solid #FFF;
+                border-left: 2px solid #FFF;
+            }
+            &::after{
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+                display: block;
+                content: '';
+                width:320px;
+                height: 40px;
+                border-bottom: 2px solid #FFF;
+                border-right: 2px solid #FFF;
+            }
+            span{
+                font-family: $ff-primary-bold;
+                font-size: 4rem;
+                letter-spacing: 2px;
+            }
+        }
+        button{
+            margin: 0 auto;
+            margin-top: 25px;
+            display: block;
+        }
+        @media (max-width:998px){
+            max-width: 1000px;
+            top: 50%;
+        }
+        @media (max-width:710px){
+            max-width: 1000px;
+            top: 50%;
+            h2{
+                font-size: 2rem;
+                &::before,&::after{
+                    width: 150px;
+                }
+                span{
+                    font-size: 2rem;
+                }
+            }
+        }
+        @media (max-width:602px){
+            left: 5%;
+            right: 5%;
+            padding-bottom: 20px;
+            top: 50px;
+            transform: none;
+        }
+    }
+} 
+.media{
+    // #d77c7f
+    // clip-path: polygon(0 0, 100% 0, 100% 87%, 59% 87%, 49% 100%, 41% 88%, 0 88%, 0% 30%);
+    // clip-path: polygon(0 0, 100% 0, 100% 80%, 62% 80%, 50% 100%, 40% 80%, 0 80%, 0% 30%);
+    background-color: #000;
+    color: #FFF;
+    #forbes{
+        width: 120px;
+        // margin-left: -10%;
+        margin-right: 9%;
+        @media screen and (max-width:1022px){
+            margin-right: 0px;
+        }
+    }
+    #bloom{
+        height: 41px;
+        margin-top: 5px;
+    }
+    #wsj{
+        max-width: 380px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 2px;
+        @media screen and (max-width:1281px){
+            margin-left: 3%;
+            margin-right: 3%;
+        }
+        @media screen and (max-width:680px){
+            max-width: 220px;
+        }
+    }
+    // .container{
+    //     .text-wrap{
+    //         position: relative;
+    //         max-width: 70rem;
+    //         margin: 10rem 0px 0px;
+    //         p{
+    //             width: 70%;
+    //             padding-bottom: 2rem;
+    //         }
+    //     }
+    // }
+    .media__wrapper{
+        flex-direction: row;
+        align-items: center;
+        @media screen and (max-width:1022px) {
+            flex-direction: column;
+            // margin-left: 50px;
+        }
+        // @media only screen and (max-width:422px){
+        //     display: none;
+        // }
+    }
+    .inner {
+        margin: 6rem 0px 0px;
+        width: 100%;
+        display: inline-block;
+        border-radius: 10rem;
+        padding: 1rem 0px;
+        p {
+            text-align: left;
+            line-height: 2;
+            margin: 2rem 0px 0px;
+        }
+        .home-hero-links {
+            width: 100%;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            @media screen and (max-width:1022px) {
+                flex-direction: column;
+            }
+            h6 {
+                position: relative;
+                flex: 1 1 0%;
+                white-space: nowrap;
+
+                margin: 2.75rem 0 1.05rem;
+                font-size: 1.2rem;
+                font-family: $ff-primary;
+                font-weight: 700;
+                line-height: 1.4;
+                letter-spacing: 0.1rem;
+                text-transform: uppercase;
+                @media (max-width: 1022px)
+                {
+                    font-size: 1.6rem;
+                }
+                a {
+                    display: inline-block;
+                    pointer-events: auto;
+                    margin: 0px 10rem 0px 0px;
+                    line-height: 2;
+                }
+                svg{
+                    position: absolute;
+                    top: 5px;
+                    transform: rotate(-90deg);
+                    margin-left: 5px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    h1{
+        text-shadow: rgb(10 56 166) 0px 0px 2.4rem;
+        font-size: 4rem;
+        font-family: $ff-primary;
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: 0rem;
+        text-transform: capitalize;
+    }
+    p{
+        text-shadow: rgb(10 56 166) 0px 0px 2.4rem;
+        font-family: $ff-primary;
+        font-size: 1.8rem;
+        font-weight: 300;
+        line-height: 1.7;
+        letter-spacing: 0.05rem;
+        margin: 2% 0px;
+    }
+}
+
+.section-caret-wrap{
+    height: 30px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    @media screen and (min-width: 2048px)
+    {
+        height: 45px;
+    }
+    .section-caret-inner{
+        height: 30px;
+        width: 2048px;
+        position: absolute;
+        display: inline-block;
+        left: 50%;
+        margin: 0px 0px 0px -1000px;
+        @media screen and (min-width: 2048px)
+        {
+            height: 45px;
+            width: 3000px;
+            margin: 0px 0px 0px -1500px;
+        }
+    }
+}
+
+.info{
+    width: calc(100% + 4rem);
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    &.container{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .left,.right{
+        padding: 2rem;
+        flex-grow: 0;
+        max-width: 50%;
+        flex-basis: 50%;
+    }
+    @media screen and (max-width:960px){
+        flex-direction: column;
+        .left,.right{
+            max-width: 95%;
+        }
+    }
+    .right{
+        .colored-text{
+            margin: 1rem 0px 0px;
+            padding-bottom: 1rem;
+            color: rgb(255, 118, 118);
+            max-width: 35rem;
+            p{
+                font-size: 2.8rem;
+                font-weight: 700;
+                line-height: 1.2;
+                letter-spacing: 0.05rem;
+                text-transform: capitalize;
+            }
+        }
+    }
+    h2 {
+        position: relative;
+        margin: 2.75rem 0 1.05rem;
+        font-size: 3.6rem;
+        font-family: $ff-primary;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.05rem;
+        text-transform: capitalize;
+        &.heading-dot::before {
+            content: "";
+            position: absolute;
+            top: -1.5rem;
+            left: 0px;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 100%;
+            background: rgb(255, 118, 118);
+        }
+    }
+}
+
+.benefits{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    h6{
+        display: block;
+        width: 100%;
+        margin: 2.75rem 0 1.05rem;
+        font-size: 1.2rem;
+        font-family: $ff-primary;
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        span{
+            display: block;
+        }
+        .underscore{
+            display: block;
+            height: 1.4rem;
+            border-bottom: 0.1rem solid rgb(29, 30, 33);
+        }
+    }
+    .colored-block{
+        width: 100%;
+        margin: 0px;
+        background: rgb(51, 92, 190);
+        padding: 2rem 7rem 2rem 4rem;
+        border-radius: 0.4rem;
+        color: rgb(255, 255, 255);
+        .top{
+            display: flex;
+            .logo{
+                width: 27rem;
+                padding: 1rem 0px 0px;
+            }
+        }
+        blockquote{
+            font-family: $ff-primary;
+            font-weight: 300;
+            line-height: 1.7;
+            letter-spacing: 0.05rem;
+            max-width: 76rem;
+            margin: 0px;
+            &::before {
+                content: "“";
+                font-size: 10rem;
+                color: rgb(255, 85, 83);
+                line-height: 0;
+                position: absolute;
+                margin: 1rem 0px 0px -0.4rem;
+            }
+            p{
+                color: rgb(255, 221, 221);
+            }
+        }
+    }
+
+    .tabs-block{
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        gap: 2%;
+        .benefits-tabs{
+            display: flex;
+            flex-direction: column;
+        }
+        .benefits-tab-item{
+            text-transform: none;
+            font-size: 1.7rem;
+            font-weight: 600;
+            text-align: left;
+            display: inline-block;
+            min-width: auto;
+            max-width: 100%;
+            padding: 1rem 2rem 2rem 4rem;
+            line-height: 1.4;
+            opacity: 1;
+            letter-spacing: 0.05em;
+            .arrow{
+                position: absolute;
+                display: none;
+                margin: 0.3rem 0px 0px -3rem;
+                color: rgb(0, 51, 173);
+                font-size: 1.3rem;
+            }
+            b{
+                color: #000;
+                font-weight: bold;
+                display: block;
+            }
+            &.selected{
+                .arrow{
+                    display: block;
+                }
+                b{
+                    color: rgb(0, 51, 173);
+                }
+            }
+            span{
+                border: 0px;
+                color: rgb(187, 187, 187);
+                font-size: 1.5rem;
+                font-family: $ff-primary;
+                font-weight: 300;
+                line-height: 1.7;
+                letter-spacing: 0.05rem;
+            }
+        }
+        .content{
+            flex-grow: 0;
+            max-width: 66.666667%;
+            flex-basis: 66.666667%;
+            .description{
+                padding-top: 0rem;
+                padding-right: 3rem;
+                padding-bottom: 4rem;
+            }
+            p{
+                font-size: 1.5rem;
+                font-family: $ff-primary;
+                font-weight: 300;
+                line-height: 1.7;
+                letter-spacing: 0.05rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+@use "../base" as *;
+
+.banner-common{
+    padding: 10rem 0px 5rem;
+    background-image: url('../images/twitter_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 350px;
+    // .text-wrap{
+    //     flex-grow: 0;
+    //     max-width: 50%;
+    //     flex-basis: 50%;
+    // }
+    color: #FFF;
+}
+.sticky-nav-container{
+    background-color: #FFF;
+    box-shadow: rgb(0 0 0 / 8%) 0px 9px 20px 0px;
+    position: relative;
+    z-index: 1;
+    &.sticky{
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        @media (max-width: 520px) {
+            position: static;
+        }
+    }
+}
+.sticky-nav{
+    flex-grow: 0;
+    // max-width: 50%;
+    flex-basis: 50%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    @media (max-width: 520px) {
+        flex-direction: column;
+        .pagename{
+            align-self: flex-start!important;
+            margin-left: 2rem!important;
+        }
+        .feature a{
+            padding: 0.2rem 2rem!important;
+        }
+    }
+
+    @media (min-width: 640px) {
+        max-width: 640px;
+    }
+    
+    @media (min-width: 768px) {
+        max-width: 768px;
+    }
+    
+    @media (min-width: 1024px) {
+        max-width: 1024px;
+    }
+    
+    @media (min-width: 1280px) {
+        max-width: 1280px;
+    }
+    
+    @media (min-width: 1536px) {
+        max-width: 1536px;
+    }
+
+    .pagename{
+        border-right: 0.2rem solid black;
+        padding-right: 2rem;
+        margin-right: 2rem;
+        align-self: center;
+        
+    }
+    .feature{
+        a{
+            display: inline-block;
+            padding: 1rem 2rem;
+
+            outline-width: 0.5rem;
+            color: $clr-primary;
+            transition: color 0.1s ease-in-out 0s;
+            text-decoration: none;
+        }
+    }
+}

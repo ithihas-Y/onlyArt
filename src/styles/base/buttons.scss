@@ -1,0 +1,101 @@
+@use "./colors" as *;
+@use "./typography.scss" as *;
+
+button {
+    // position: relative;
+    // overflow: hidden;
+    &.btn{
+        padding: 1.4rem 4rem;
+        font-size: 1.5rem;
+        min-width: 64px;
+        box-sizing: border-box;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        font-family: $ff-primary;
+        font-weight: 600;
+        line-height: 1.7;
+        border-radius: 25px;
+        letter-spacing: 0.1rem;
+        text-transform: none;
+        cursor: pointer;
+        @media screen and (max-width:343px){
+            padding: 8px 16px;
+        }
+    }
+    &.btn-primary{
+        // background: rgb(255, 255, 255);
+        // color: #000;
+        background-color: $clr-primary;
+        color: #FFF;
+    }
+    &.btn-secondary{
+        background: #000;
+        color: rgb(255, 255, 255);
+        &:hover{
+            background: lighten(#000, 20);
+        }
+    }
+
+    transition: all 0.25s ease 0s;
+    &:hover{
+        // opacity: 0.75;
+        border-color: darken($clr-primary, 20);
+        background: $clr-primary;
+        color: rgb(255, 255, 255);
+        // transition: all 0.25s ease 0s;
+    }
+}
+
+[ripple] {
+    position: relative;
+    overflow: hidden;
+    .ripple--container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        span {
+            transform: scale(0);
+            border-radius: 100%;
+            background-color: #ddd;
+            position: absolute;
+            opacity: 0.75;
+            animation: ripple 1000ms;
+        }
+    }
+    &.btn-primary{
+        span{
+            background-color: darken($clr-primary, 20);
+        }
+    }
+    &.btn-secondary{
+        span{
+            background-color: rgb(255,255,255, 0.7);
+        }
+    }
+}
+@-moz-keyframes ripple {
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+@-webkit-keyframes ripple {
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+@-o-keyframes ripple {
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+@keyframes ripple {
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+  

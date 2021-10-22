@@ -1,0 +1,105 @@
+@use "../base" as *;
+
+@keyframes blurPopover {
+    from {filter: blur(12px);}
+    to {filter: blur(0px);}
+}
+.pop-over-menu{
+    background: #1d1e21;
+    position: absolute;
+    top: 5rem;
+    // z-index: 2;
+    z-index: 100;
+    min-width: 53rem;
+    width: 36vw;
+    height: 32rem;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    box-shadow: rgb(0 0 0 / 18%) 0px 10px 9px 0px;
+    border-radius: 4px;
+    // left: 0px;
+    left: -4vw;
+    padding: 0.5rem;
+    transform: translateX(-271px);
+    *{
+        margin: 0px;
+        padding: 0px;
+        line-height: 1;
+        color: rgb(255, 255, 255);
+    }
+    &.dev,&.ind{
+        animation-name: blurPopover;
+        animation-duration: .45s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        .pop-over-menu-item{
+            width: calc(32% - 2rem);
+        }
+    }
+    &.dev > li:nth-child(1) {
+        padding-top: 6rem;
+        flex: 1 1 calc(100% - 2rem);
+        img{
+            width: 6rem;
+            height: 7.7rem;
+            display: block;
+            margin: 0px auto;
+        }
+    }
+    &.ind > li:nth-child(1)
+    // ,
+    // &.ind > li:nth-child(2)
+    {
+        padding-top: 6rem;
+        flex: 1 1 calc(100% - 2rem);
+        img {
+            height: 6.25rem;
+            width: 8rem;
+            display: block;
+            margin: 0px auto;
+        }
+    }
+    > .pop-over-menu-item {
+        background-color: rgba(255, 255, 255, 0.07);
+        flex: 0 0 calc(50% - 2rem);
+        padding: 1rem;
+        margin: 1rem;
+        height: 12rem;
+        width: calc(33% - 2rem);
+        text-align: left;
+        border-radius: 4px;
+        transition: background-color 500ms ease 0s;
+        overflow: hidden;
+        &:hover {
+            background: $clr-primary;
+        }
+    }
+    .link-tile {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        > div {
+            margin-top: auto;
+            min-width: 12rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1;
+        }
+        > div h5 {
+            min-height: 2.8rem;
+            font-family: $ff-primary;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            letter-spacing: 0.15rem;
+            font-weight: 700;
+        }
+    }
+    sub{
+        font-size: 1.5rem;
+        font-family: $ff-primary;
+        font-weight: 300;
+        line-height: 1.7;
+        letter-spacing: 0.05rem;
+    }
+}

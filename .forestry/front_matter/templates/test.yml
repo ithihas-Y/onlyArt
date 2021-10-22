@@ -1,0 +1,43 @@
+---
+label: Test
+hide_body: false
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: gallery
+  type: image_gallery
+  config: {}
+  label: Gallery
+- name: artist
+  type: file
+  config:
+    maxSize: 64
+  label: Artist
+- name: slug
+  type: text
+  config:
+    required: false
+  label: Slug
+  description: The path to your creator page
+- name: facebook
+  type: text
+  config:
+    required: false
+  label: Facebook
+- name: twitter
+  type: text
+  config:
+    required: false
+  label: Twitter
+- name: instagram
+  type: text
+  config:
+    required: false
+  label: Instagram
+pages:
+- src/content/artists/brent-shavnore.md
+- src/content/artists/test-artist.md
+- src/content/artists/welder-wings.md

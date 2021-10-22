@@ -1,0 +1,108 @@
+@use "../base" as *;
+.search-wrapper{
+    position: relative;
+    input{
+        width: 100%;
+        padding: 0px 10px;
+        appearance: none;
+        line-height: 1;
+        border: 1px solid rgb(194, 194, 194);
+        border-radius: 0px;
+        transition: border-color 0.25s ease 0s;
+        font-family: ll-unica77, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        height: 40px;
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+        &:focus{
+            outline: none;
+            border-color: rgb(112, 112, 112);
+        }
+    }
+    button{
+        position: absolute;
+        top: 9px;
+        right: 10px;
+        &:hover{
+            border-color:#FFF;
+            background: #FFF;
+        }
+    }
+}
+
+.alpha-wrapper{
+    justify-content: flex-end;
+    // a{
+    //     padding: 2px 5px;
+    // }
+    span{
+        // padding: 5px 5px 5px 0px;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        text-decoration: none;
+        transition: color 250ms ease 0s;
+        font-weight: 450;
+        padding: 2px 2.5px;
+        
+        &.no-data{
+            color: lightgray;
+        }
+        &.data{
+            color: rgb(112, 112, 112);
+        }
+        
+        &:hover{
+            color: #000;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+    // font-size: 24px;
+    // line-height: 28px;
+}
+.creators-list{
+    img{
+        min-height: 150px;
+        max-height: 239px;
+        object-fit: cover;
+    }
+    #creator_name{
+        font-size: 2rem;
+    }
+    #creator_link{
+        display: inline-flex;
+        cursor: pointer;
+        position: relative;
+        white-space: nowrap;
+        text-decoration: none;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        border: 1px solid #707070;
+        transition: color 0.25s ease 0s, border-color 0.25s ease 0s, background-color 0.25s ease 0s, box-shadow 0.25s ease 0s;
+        border-radius: 25px;
+        padding: 1rem 1.5rem;
+        background-color: transparent;
+        color: black;
+        align-self: flex-end;
+        font-size: 2rem;
+        line-height: 1.5rem;
+        &:hover{
+            
+            background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%);
+         
+            // border-color: rgb(16, 35, 215);
+            color: rgb(255, 255, 255);
+        }
+    }
+}
+.pagination{
+    display: flex;
+    justify-content: flex-end;
+    button{
+        padding: 8px 16px!important;
+        &:last-child{
+            margin-left: 10px;
+        }
+    }
+}
