@@ -22,8 +22,6 @@ const BuyPage = ({ data, location }) => {
   const [selectedAddr,setAddr] = useState('')
   const siteTitle = data.site.siteMetadata?.title || `Title`
 
-  // const { markdownRemark } = data // data.markdownRemark holds your post data
-  // const { frontmatter, html } = markdownRemark
 
   useEffect(() => {
     setMd(data.allMarkdownRemark.nodes[0])
