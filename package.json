@@ -43,7 +43,8 @@
     "react-spring": "^9.2.4",
     "sass": "^1.35.2",
     "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
+    "typeface-montserrat": "0.0.75",
+    "web3": "^1.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.1",

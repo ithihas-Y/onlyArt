@@ -9,9 +9,16 @@ import Layout from "components/layout"
 import Seo from "components/seo"
 
 import Banner from "components/Banner"
+import Web3 from 'web3'
+import abi from '../abis/OATToken.json'
+import {buyOat,claimReflection} from '../functions'
+
+const rpcUrl = 'https://speedy-nodes-nyc.moralis.io/c63aa27dafeaf0a01db49ea9/eth/ropsten'
 
 const BuyPage = ({ data, location }) => {
   const [md, setMd] = useState(null)
+  const [web3,setWeb3] = useState(null)
+  const [OAT,setOAT] = useState(null)
   const [selectedAddr,setAddr] = useState('')
   const siteTitle = data.site.siteMetadata?.title || `Title`
 
@@ -20,9 +27,11 @@ const BuyPage = ({ data, location }) => {
 
   useEffect(() => {
     setMd(data.allMarkdownRemark.nodes[0])
-    //     fetch(PageMD).then((response) => response.text()).then((text) => {
-    //         setMd(text)
-    //     })
+    const _web3 = new Web3(rpcUrl)
+    setWeb3(_web3)
+    const _Oat = new _web3.eth.Contract(abi.abi,'0x0Fc16D583221Cc80cb2322c4fC23375f2d961abD')
+    setOAT(_Oat)
+    _Oat.methods._name().call().then(console.log)
   }, [])
 
   async function connectWallet(){
